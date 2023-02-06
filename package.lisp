@@ -1,4 +1,6 @@
 (defpackage #:ember
-  (:use #:cl))
+  (:use #:cl)
+  (:export #:new-context))
+
 
   

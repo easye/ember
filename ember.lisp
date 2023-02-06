@@ -1,6 +1,7 @@
 (in-package :ember)
 
-#|  
+
+#| <https://mailman.common-lisp.net/pipermail/armedbear-devel/2020-July/004074.html>
   #1"new SparkConf()
    .setAppName(app-name)
    .setMaster(conf-master)"
