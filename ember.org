@@ -1,0 +1,28 @@
+Ember -- A wrapping of Apache Spark in Armedbear Common Lisp
+
+* <https://mailman.common-lisp.net/pipermail/armedbear-devel/2023-February/004297.html>
+
+#+caption: Initial load
+#+begin_src lisp
+  (asdf:make :ember)
+#+end_src
+
+#+RESULTS:
+: T
+
+#+caption: Create singleton context 
+#+begin_src lisp
+  (ember:new-context) ;; N.b. should only be called once in a given JVM
+#+end_src
+
+#+begin_example
+[worker] WARNING org.apache.spark.util.Utils - Your hostname, hawk.local resolves to a loopback address: 127.0.0.1; using 192.168.0.157 instead (on interface en0)
+[worker] WARNING org.apache.spark.util.Utils - Set SPARK_LOCAL_IP if you need to bind to another address
+#+end_example
+
+* Colophon  
+  #+begin_example
+    Mark <evenson@not.org>
+    Created: 2023-05-06
+    Revised: <2023-02-06 Mon 12:55>
+  #+end_example
