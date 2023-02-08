@@ -1,6 +1,10 @@
 (defpackage #:ember
   (:use #:cl)
-  (:export #:new-context))
+  (:export
+   #:spark-context
+   #:*spark-context*
+   #:*spark-conf*))
+    
 
 
   
