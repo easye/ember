@@ -11,9 +11,15 @@
   :defsystem-depends-on (jss abcl-asdf)
   :depends-on (#:jss #:javaparser)
   :perform (load-op (o c)
-                    (#"setContextClassLoader" (#"currentThread" 'Thread)
-                                              (java:get-current-classloader))
-                    (call-next-method o c))
-  :components ((:mvn "org.apache.spark/spark-core_2.12" :version "3.3.1")
+              ;; pre-abcl-1.9.1 version                    
+              (#"setContextClassLoader"
+               (#"currentThread" 'Thread)
+               (java:get-current-classloader))
+              ;; abcl-1.9.1 onwards
+              #+nil
+              (setf (java:context-classloader)
+                    (java:get-default-classloader))
+              (call-next-method o c))
+  :components ((:mvn "org.apache.spark/spark-core_2.12/3.3.1")
                (:file "package")
                (:file "ember")))
